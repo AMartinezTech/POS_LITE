@@ -1,0 +1,287 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Space+Grotesk:wght@500&family=Space+Mono:wght@700&display=swap');
+:root {
+  --color-body: rgb(252, 252, 252);
+  --color-left-menu: rgb(255, 255, 255);
+  --color-left-menu-hover: rgb(238, 238, 238);
+  --color-text: rgb(0, 0, 0);
+  --color-text-menu: rgb(134, 136, 144);
+  --color-text-menu-hover: rgb(0, 0, 0);
+  --color-button: rgb(0, 0, 0);
+  --color-button-text: rgb(255, 255, 255);
+  --color-linea: rgb(241, 241, 241);
+  --color-switch-base: rgb(201, 202, 206);
+  --color-switch-circule: rgb(241, 241, 241);
+  --color-scroll: rgb(192, 192, 192);
+  --color-scroll-hover: rgb(134, 134, 134);
+}
+.dark-mode {
+  --color-body: rgb(45, 45, 45);
+  --color-left-menu: rgb(44, 45, 49);
+  --color-left-menu-hover: rgb(0, 0, 0);
+  --color-text: rgb(255, 255, 255);
+  --color-text-menu: rgb(110, 110, 117);
+  --color-text-menu-hover: rgb(238, 238, 238);
+  --color-button: rgb(255, 255, 255);
+  --color-button-text: rgb(0, 0, 0);
+  --color-linea: rgb(71, 70, 78);
+  --color-switch-base: rgb(39, 205, 64);
+  --color-switch-circule: rgb(255, 255, 255);
+  --color-scroll: rgb(68, 69, 74);
+  --color-scroll-hover: rgb(85, 85, 85);
+}
+* {
+  padding: 0;
+  margin: 0;
+  font-family: 'Noto Sans JP', sans-serif;
+  box-sizing: border-box;
+  font-size: 12px;
+  font-weight: 400;
+}
+body {
+  background-color: var(--color-body);
+}
+
+main {
+  margin-left: 250px;
+  padding: 15px;
+  transition: margin-left 0.5s ease;
+}
+main.min-main {
+  margin-left: 80px;
+}
+
+/* ------------>Menu icon */
+.menu-icon {
+  position: fixed;
+  width: 50px;
+  height: 50px;
+  font-size: 30px;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-button);
+  color: var(--color-button-text);
+  right: 15px;
+  top: 15px;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 100;
+}
+
+/* ------------>Left menu bar */
+.left-menu {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 250px;
+  height: 100%;
+  overflow: hidden;
+  padding: 20px 15px;
+  background-color: var(--color-left-menu);
+  transition: width 0.5s ease, background-color 0.3s ease, left 0.5s ease;
+  z-index: 50;
+}
+.left-mini-menu {
+  width: 80px;
+}
+.left-menu span {
+  width: 100px;
+  white-space: nowrap;
+  font-size: 15px;
+  text-align: left;
+  opacity: 1;
+  transition: opacity 0.5s ease, width 0.5s ease;
+}
+.left-menu span.hidden {
+  opacity: 0;
+  width: 0;
+}
+
+/* ------------>Left menu header */
+.left-menu .header-menu {
+  width: 100%;
+  height: 45px;
+  margin-bottom: 40px;
+  display: flex;
+  align-items: center;
+  color: var(--color-text);
+}
+.left-menu .header-menu ion-icon {
+  cursor: pointer;
+  min-width: 50px;
+  font-size: 40px;
+}
+.left-menu .header-menu span {
+  margin-left: 5px;
+  font-size: 20px;
+}
+.left-menu .header-menu span.hidden {
+  opacity: 0;
+}
+.left-menu .btnMenu {
+  border: none;
+  width: 100%;
+  height: 45px;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  background-color: var(--color-button);
+  color: var(--color-button-text);
+  cursor: pointer;
+  transition: margin-bottom 0.3s ease;
+}
+.left-menu .btnMenu ion-icon {
+  min-width: 50px;
+  font-size: 25px;
+}
+
+/*----> NavMenu*/
+.left-menu .navMenu {
+  height: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+.left-menu .navMenu::-webkit-scrollbar {
+  width: 5px;
+}
+.left-menu .navMenu::-webkit-scrollbar-thumb {
+  background-color: var(--color-scroll);
+  border-radius: 5px;
+}
+.left-menu .navMenu::-webkit-scrollbar-thumb:hover {
+  background-color: var(--color-scroll-hover);
+}
+.left-menu .navMenu li {
+  list-style-type: none;
+  display: flex;
+  margin-bottom: 5px;
+}
+.left-menu .navMenu li a {
+  text-decoration: none;
+  width: 100%;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  border-radius: 10px;
+  color: var(--color-text-menu);
+}
+.left-menu .navMenu a:hover {
+  background-color: var(--color-left-menu-hover);
+  color: var(--color-text-menu-hover);
+}
+.left-menu .navMenu ion-icon {
+  min-width: 50px;
+  font-size: 20;
+}
+.left-menu .linea {
+  width: 100%;
+  height: 1px;
+  margin-top: 10px;
+  background-color: var(--color-linea);
+}
+.left-menu .dark-mode {
+  width: 100%;
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+.left-menu .dark-mode .info {
+  width: 150px;
+  height: 45px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  color: var(--color-text-menu);
+}
+.left-menu .dark-mode ion-icon {
+  width: 50px;
+  font-size: 20px;
+}
+.left-menu .dark-mode .switch {
+  min-width: 50px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.left-menu .dark-mode .base {
+  position: relative;
+  width: 35px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  background-color: var(--color-switch-base);
+  border-radius: 50px;
+}
+.left-menu .dark-mode .circule {
+  background-color: var(--color-switch-circule);
+  position: absolute;
+  left: 2px;
+  width: 18px;
+  height: 90%;
+  border-radius: 50%;
+  transition: left 0.3s ease;
+}
+.left-menu .dark-mode .circule.on {
+  left: 15px;
+}
+@media (max-height: 440px) {
+  .left-menu .header-menu {
+    margin-bottom: 5px;
+  }
+  .left-menu .dark-mode {
+    margin-bottom: 3px;
+  }
+}
+@media (max-width: 600px) {
+  .left-menu {
+    position: fixed;
+    left: -250px;
+    transition: left 0.4s ease;
+  }
+  .max-left-menu {
+    left: 0;
+  }
+  .menu-icon {
+    display: flex;
+  }
+  .menu-icon ion-icon:nth-child(2) {
+    display: none;
+  }
+  main {
+    margin-left: 0;
+  }
+  main.min-main {
+    margin-left: 0;
+  }
+}
+
+/*-----------> Table*/
+table {
+  width: 100%;
+  color: var(--color-text);
+  border: 1px solid var(--color-linea);
+  border-radius: 15px;
+  text-align: left;
+  /* border-collapse: collapse; */
+  margin: 0 0 1em 0;
+  /* caption-side: top; */
+}
+
+td,
+th {
+  padding: 0.3em;
+}
+th,
+td {
+  border-bottom: 1px solid var(--color-linea);
+
+  width: 25%;
+}
+table tbody tr:nth-last-child(1) > th {
+  border-bottom: 3px;
+}

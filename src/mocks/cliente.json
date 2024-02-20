@@ -1,0 +1,32 @@
+{
+  "customer": [
+    {
+      "id": 1,
+      "name": "Alexis",
+      "lastName": "Martínez De La Cruz"
+    },
+    {
+      "id": 2,
+      "name": "Clarisa",
+      "lastName": "Castillo Peguero"
+    },
+    {
+      "id": 3,
+      "name": "Alenny",
+      "lastName": "Martínez Castillo"
+    },
+    {
+      "id": 4,
+      "name": "Alis",
+      "lastName": "Martínez Castillo"
+    },
+    {
+      "id": 5,
+      "name": "Eily",
+      "lastName": "Martínez Castillo"
+    }
+  ],
+  "total": 5,
+  "skip": 0,
+  "limit": 30
+}
