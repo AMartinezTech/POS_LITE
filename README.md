@@ -1,6 +1,6 @@
 # Enunciado
 
-1. Crear una app permita hacer ventas:
+1. Crear una app que permita facturación, creación de clientes, productos, gastos e ingresos:
 
 - AUTH
   - listar usuario
