@@ -1,11 +1,24 @@
 import '../css/style.css'
-import { setupMenu } from '../components/main_manu/menu'
+import { setupMenu } from '../components/menu'
 import { customer } from '../mocks/cliente.json'
 
 const body = document.body
 setupMenu(body)
 function createAppCustomer() {
   document.title = 'Maestro de Cliente'
+
+  const header = document.createElement('header')
+  header.classList.add('header')
+
+  const btnNewDoc = document.createElement('button')
+  btnNewDoc.classList.add('btn-new')
+  btnNewDoc.setAttribute('id', 'btnNewCustomer')
+  btnNewDoc.innerHTML = `<ion-icon name="add-circle-outline"></ion-icon>`
+  const divHeader = document.createElement('div')
+  divHeader.classList.add('title-document')
+  divHeader.innerText = 'Maestro de Cliente'
+  header.append(btnNewDoc, divHeader)
+
   const table = document.createElement('table')
   table.classList.add('table')
   const thead = document.createElement('thead')
@@ -25,8 +38,7 @@ function createAppCustomer() {
     <th scope="col"> 
     <span>
     <ion-icon name="create-outline"></ion-icon>
-    </span>
-    <span>
+    
     <ion-icon name="trash-outline"></ion-icon>
     </span>
     </th>
@@ -39,6 +51,11 @@ function createAppCustomer() {
   table.append(thead, tbody)
 
   const app = document.querySelector('#app')
-  app.append(table)
+  app.append(header, table)
 }
 createAppCustomer()
+const btnNewCustomer = document.getElementById('btnNewCustomer')
+
+btnNewCustomer.addEventListener('click', () => {
+  alert('Yesss')
+})

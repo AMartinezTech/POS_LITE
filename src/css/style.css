@@ -34,11 +34,13 @@
   margin: 0;
   font-family: 'Noto Sans JP', sans-serif;
   box-sizing: border-box;
-  font-size: 12px;
+
   font-weight: 400;
 }
 body {
   background-color: var(--color-body);
+  color: var(--color-text);
+  transition: background-color 0.5s ease;
 }
 
 main {
@@ -70,6 +72,8 @@ main.min-main {
 
 /* ------------>Left menu bar */
 .left-menu {
+  box-shadow: rgba(9, 30, 66, 0.25) 0px 1px 1px,
+    rgba(9, 30, 66, 0.13) 0px 0px 1px 1px;
   position: fixed;
   display: flex;
   flex-direction: column;
@@ -259,17 +263,54 @@ main.min-main {
     margin-left: 0;
   }
 }
+/*-----------> Title Document*/
+header {
+  box-shadow: rgba(9, 30, 66, 0.25) 0px 1px 1px,
+    rgba(9, 30, 66, 0.13) 0px 0px 1px 1px;
+  color: var(--color-text);
+  border: 1px solid var(--color-linea);
+  border-radius: 10px;
+  display: flex;
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  align-items: center;
+  gap: 10px;
+}
+
+header button {
+  background-color: transparent;
+  border: none;
+  min-width: 30px;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+header button ion-icon {
+  font-size: 50px;
+  cursor: pointer;
+  color: var(--color-text-menu);
+}
+header .title-document {
+  font-size: 1.2rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: var(--color-text-menu);
+}
+/*-----------> Title Document END*/
 
 /*-----------> Table*/
 table {
   width: 100%;
+  box-shadow: rgba(9, 30, 66, 0.25) 0px 1px 1px,
+    rgba(9, 30, 66, 0.13) 0px 0px 1px 1px;
   color: var(--color-text);
   border: 1px solid var(--color-linea);
-  border-radius: 15px;
+  border-radius: 10px;
   text-align: left;
-  /* border-collapse: collapse; */
   margin: 0 0 1em 0;
-  /* caption-side: top; */
 }
 
 td,
@@ -285,3 +326,12 @@ td {
 table tbody tr:nth-last-child(1) > th {
   border-bottom: 3px;
 }
+
+table tbody tr ion-icon {
+  font-size: 20px;
+}
+table tbody span {
+  display: flex;
+  gap: 5px;
+}
+/*-----------> Table END*/
