@@ -1,7 +1,7 @@
 import '../css/style.css'
 import { setupMenu } from '../components/menu'
 import { customer } from '../mocks/cliente.json'
-
+import { Modal } from '../components/modal'
 const body = document.body
 setupMenu(body)
 function createAppCustomer() {
@@ -37,9 +37,8 @@ function createAppCustomer() {
     <th scope="col">${item.lastName}</th>
     <th scope="col"> 
     <span>
-    <ion-icon name="create-outline"></ion-icon>
-    
-    <ion-icon name="trash-outline"></ion-icon>
+      <ion-icon id="btnEdit" name="create-outline"></ion-icon>
+      <ion-icon id="btnDelete" name="trash-outline"></ion-icon>
     </span>
     </th>
     </tr>`
@@ -51,11 +50,26 @@ function createAppCustomer() {
   table.append(thead, tbody)
 
   const app = document.querySelector('#app')
-  app.append(header, table)
+  const modal = document.createElement('div')
+  modal.innerHTML = Modal
+  app.append(header, table, modal)
 }
 createAppCustomer()
+const modal = document.getElementById('myModal')
+const btnModalClose = document.getElementsByClassName('close')[0]
 const btnNewCustomer = document.getElementById('btnNewCustomer')
 
 btnNewCustomer.addEventListener('click', () => {
-  alert('Yesss')
+  modal.style.display = 'block'
+})
+btnModalClose.addEventListener('click', () => {
+  modal.style.display = 'none'
+})
+const btnEdit = document.getElementById('btnEdit')
+btnEdit.addEventListener('click', () => {
+  alert('Edit')
+})
+const btnDelete = document.getElementById('btnDelete')
+btnDelete.addEventListener('click', () => {
+  alert('Delete')
 })
