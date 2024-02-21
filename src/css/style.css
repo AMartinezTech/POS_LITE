@@ -240,8 +240,16 @@ main.min-main {
   .left-menu .dark-mode {
     margin-bottom: 3px;
   }
+  .modal .modal-content {
+    background-color: aquamarine;
+    width: 60%; /* Could be more or less, depending on screen size */
+  }
 }
 @media (max-width: 600px) {
+  .modal .modal-content {
+    background-color: rgb(102, 60, 6);
+    width: 60%; /* Could be more or less, depending on screen size */
+  }
   .left-menu {
     position: fixed;
     left: -250px;
@@ -406,6 +414,7 @@ table tbody span {
   letter-spacing: 1px;
 }
 .modal .modal-content .frm .col .form-control input {
+  width: 100%;
   height: 35px;
   border: none;
   padding-left: 2px;
